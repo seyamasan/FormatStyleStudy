@@ -20,5 +20,8 @@ struct SimpleDateFormatView: View {
 }
 
 #Preview {
-    ContentView()
+    SimpleDateFormatView(
+        title: "test",
+        date: Date()
+    )
 }
