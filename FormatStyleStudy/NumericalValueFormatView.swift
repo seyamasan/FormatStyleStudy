@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct NumericalValueFormatView: View {
-    let doubleValue: Double = 16.38543
+    var title: String
+    var doubleValue: Double
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -65,9 +66,13 @@ struct NumericalValueFormatView: View {
             }
         }
         .padding()
+        .navigationTitle(title)
     }
 }
 
 #Preview {
-    NumericalValueFormatView()
+    NumericalValueFormatView(
+        title: "test",
+        doubleValue: 16.38543
+    )
 }
