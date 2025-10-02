@@ -17,8 +17,7 @@ struct NumericalValueFormatView: View {
                 Text("元の数値")
                     .foregroundStyle(.secondary)
                 Spacer()
-                Text(doubleValue.formatted(.number.precision(.fractionLength(5))))
-                    .font(.system(.body, design: .monospaced))
+                Text(doubleValue.formatted())
             }
 
             Divider()
