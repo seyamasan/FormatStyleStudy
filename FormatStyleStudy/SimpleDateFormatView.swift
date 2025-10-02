@@ -12,9 +12,24 @@ struct SimpleDateFormatView: View {
     var date: Date
     
     var body: some View {
-        VStack {
-            Text(date.formatted())
+        VStack(alignment: .leading, spacing: 16) {
+            HStack {
+                Text("元のDate")
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Text("\(date)")
+            }
+
+            Divider()
+
+            HStack {
+                Text("フォーマット後")
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Text(date.formatted())
+            }
         }
+        .padding()
         .navigationTitle(title)
     }
 }
