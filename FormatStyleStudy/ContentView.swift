@@ -11,6 +11,7 @@ struct ContentView: View {
     let simpleDateFormatTitle = "シンプルな日付フォーマット"
     let japaneseCalendarDateFormatTitle = "和暦日付フォーマット"
     let numericalValueFormatTitle = "数値フォーマット"
+    let measurementFormatTitle = "計測フォーマット"
     
     var body: some View {
         NavigationStack {
@@ -47,6 +48,20 @@ struct ContentView: View {
                         )
                     } label: {
                         Text(numericalValueFormatTitle)
+                    }
+                }
+                
+                Section("計測") {
+                    // 面積
+                    let kyoto: Double = 4612.21
+                    
+                    NavigationLink {
+                        MeasurementFormatView(
+                            title: measurementFormatTitle,
+                            prefecture: kyoto
+                        )
+                    } label: {
+                        Text(measurementFormatTitle)
                     }
                 }
             }
