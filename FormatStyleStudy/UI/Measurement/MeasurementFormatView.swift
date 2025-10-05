@@ -39,7 +39,9 @@ struct MeasurementFormatView: View {
                 Text(Measurement(
                     value: prefecture,
                     unit: UnitArea.squareKilometers
-                ).formatted(.measurement(width: .wide)))
+                ).formatted(.measurement(width: .wide)
+                    .locale(Locale(languageCode: "ja")))
+                )
             }
         }
         .padding()
