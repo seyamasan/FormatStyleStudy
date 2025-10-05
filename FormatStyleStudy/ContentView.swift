@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     let simpleDateFormatTitle = "シンプルな日付フォーマット"
     let japaneseCalendarDateFormatTitle = "和暦日付フォーマット"
+    let customDateFormatTitle = "カスタム日付フォーマット"
     let numericalValueFormatTitle = "数値フォーマット"
     let measurementFormatTitle = "計測フォーマット"
     
@@ -35,6 +36,15 @@ struct ContentView: View {
                         )
                     } label: {
                         Text(japaneseCalendarDateFormatTitle)
+                    }
+                    
+                    NavigationLink {
+                        CustomDateFormatView(
+                            title: customDateFormatTitle,
+                            date: now
+                        )
+                    } label: {
+                        Text(customDateFormatTitle)
                     }
                 }
                 
