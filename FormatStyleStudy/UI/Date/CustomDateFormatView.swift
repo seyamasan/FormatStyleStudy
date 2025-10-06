@@ -11,9 +11,6 @@ struct CustomDateFormatView: View {
     var title: String
     var date: Date
     
-    private let jpLocale = Locale(identifier: "ja_JP")
-    private let jpCalendar = Calendar(identifier: .japanese)
-    
     private let customFormat: Date.FormatString
         = "\(year: .extended())/\(month: .twoDigits)/\(day: .twoDigits) \(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased)):\(minute: .twoDigits):\(second: .twoDigits)"
     
