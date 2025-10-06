@@ -15,7 +15,7 @@ struct CustomDateFormatView: View {
     private let jpCalendar = Calendar(identifier: .japanese)
     
     private let customFormat: Date.FormatString
-        = "\(year: .extended())\(month: .twoDigits)\(day: .twoDigits)_\(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased))\(minute: .twoDigits)\(second: .twoDigits)"
+        = "\(year: .extended())/\(month: .twoDigits)/\(day: .twoDigits) \(hour: .twoDigits(clock: .twentyFourHour, hourCycle: .zeroBased)):\(minute: .twoDigits):\(second: .twoDigits)"
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
@@ -34,7 +34,6 @@ struct CustomDateFormatView: View {
                 Spacer()
                 Text(date.formatted(.verbatim(
                     customFormat,
-                    locale: Locale(languageCode: .japanese, languageRegion: .japan),
                     timeZone: TimeZone(identifier: "Asia/Tokyo")!,
                     calendar: Calendar(identifier: .japanese)
                 )))
